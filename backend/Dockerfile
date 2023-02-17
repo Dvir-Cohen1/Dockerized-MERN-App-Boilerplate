@@ -13,8 +13,11 @@ RUN npm install
 # Copy the source code to the container
 COPY . .
 
+# Build the TypeScript code
+RUN npm run compile
+
 # Expose port 5000 for the application
 EXPOSE 5000
 
 # Start the application
-CMD ["npm", "run","dev"]
+CMD ["npm", "start"]
